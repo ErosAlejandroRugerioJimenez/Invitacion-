@@ -1,0 +1,30 @@
+html.lock-scroll,
+body.lock-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  
+  /* ESTO OCULTA LA BARRA EN FIREFOX Y EDGE */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ========================================= */
+/* ESTO OCULTA LA BARRA EN CHROME Y SAFARI   */
+/* ========================================= */
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  background: transparent;
+}

@@ -1,0 +1,13 @@
+<button
+  *ngIf="isOpen"
+  class="music-btn"
+  (click)="toggleMusic()">
+  {{ isMuted ? '🔇' : '🎵' }}
+</button>
+
+<app-envelope
+  *ngIf="!isOpen"
+  (opened)="onEnvelopeOpened()">
+</app-envelope>
+
+<app-event-details *ngIf="isOpen"></app-event-details>

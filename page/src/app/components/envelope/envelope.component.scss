@@ -1,0 +1,502 @@
+@use "sass:color";
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600&display=swap');
+
+$gold:#c9993a;
+$gold-light:#e8c878;
+$gold-dark:#a07520;
+$gold-ring:#b5842a;
+
+$text-gold:#a3876a;
+$text-amp:#b8956e;
+$text-gray:#666;
+$text-dark:#333;
+
+$bg-outer:#e2e0dc;
+$bg-letter:#f8f7f4;
+$bg-top:#ffffff;
+$bg-bottom:#f2f0ec;
+$bg-left:#eeecea;
+$bg-right:#e8e6e3;
+
+
+/* ANIMACIONES */
+
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.05);opacity:.75}
+  100%{transform:scale(1)}
+}
+
+@keyframes envelopeZoomOut{
+  from{
+    opacity:1;
+    transform:scale(1);
+    filter:blur(0);
+  }
+
+  to{
+    opacity:0;
+    transform:scale(1.06);
+    filter:blur(6px);
+  }
+}
+
+@keyframes photoReveal{
+  from{
+    opacity:0;
+    transform:translateY(30px) scale(.9);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+
+/* WRAPPER */
+
+.mobile-envelope-wrapper{
+  width:100vw;
+  min-height:100dvh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  margin:0;
+  padding:0;
+
+  overflow:hidden;
+
+  background:$bg-outer;
+}
+
+
+/* SOBRE */
+
+.envelope-stage{
+
+  width:min(92vw,430px);
+
+  aspect-ratio:4/6;
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:14px;
+
+  background:$bg-letter;
+
+  box-shadow:
+  0 10px 40px rgba(0,0,0,.10),
+  0 2px 10px rgba(0,0,0,.08);
+
+  perspective:1200px;
+}
+.seal-initials {
+  font-family: 'Great Vibes', cursive;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.85); /* Un blanco suave */
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3); /* Sombrita para que parezca grabado en la cera */
+  margin-top: 5px; /* Ajuste para centrar bien la fuente cursiva */
+}
+.envelope-instructions {
+  position: absolute;
+  bottom: 12%; /* Ajusta esto si quieres que suba o baje un poco */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Espacio entre las dos frases */
+  z-index: 10;
+}
+
+.news-text {
+  font-family: 'Great Vibes', cursive; /* Tu fuente cursiva principal */
+  font-size: 38px; /* La hacemos más grande para que luzca el trazo */
+  color: #746b73; /* Tu color gris elegante */
+  font-weight: normal; /* Ya no necesitamos italic, la fuente ya es cursiva */
+  margin-bottom: 5px; /* Le damos un poco de aire por debajo */
+}
+
+.action-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3em; /* Súper espaciado para dar elegancia */
+  color: #c5a26d; /* Tu color $dorado */
+  
+  /* Agregamos una animación para que invite a tocar */
+  animation: pulseClick 2s infinite ease-in-out;
+}
+/* Animación de latido sutil */
+@keyframes pulseClick {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05); /* Crece un 5% */
+  }
+}
+/* CARTA */
+
+.letter-content{
+
+  position:absolute;
+  inset:0;
+
+  background:$bg-letter;
+
+  z-index:1;
+
+  padding:35px 28px;
+
+  overflow-y:auto;
+
+  display:flex;
+  flex-direction:column;
+
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  transform:
+      translateY(25px)
+      scale(.95);
+
+  opacity:0;
+
+  transition:
+      transform .6s ease .8s,
+      opacity .6s ease .8s;
+}
+
+
+/* FOTO */
+
+.couple-photo{
+
+  width:230px;
+  height:320px;
+
+  margin:0 auto 30px;
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  background:#fff;
+
+  border:5px solid rgba(255,255,255,.95);
+
+  box-shadow:
+      0 15px 40px rgba(0,0,0,.15);
+
+  animation:photoReveal 10s ease;
+}
+
+.couple-photo img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+
+  object-position:center;
+
+  background:#fff;
+
+  display:block;
+}
+
+
+/* TEXTO */
+
+.letter-content h2{
+
+  margin:0 0 15px;
+
+  font-size:55px;
+
+  font-family:'Great Vibes',cursive;
+
+  color:$text-dark;
+}
+
+.letter-content p {
+  margin: 0;
+  letter-spacing: .35em; /* Un poquito más de separación */
+  font-size: 16px;
+  color: $gold-dark; /* o $text-gold */
+  font-weight: 600;
+}
+.heart-divider {
+  margin: 18px 0 10px;
+  font-size: 20px;
+  color: $gold-light; /* Un dorado más suave para el corazón */
+}
+.couple-names {
+  margin: 0;
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px; /* Letra grande y cursiva para sus nombres */
+  color: $text-gold;
+  font-weight: normal;
+}
+
+/* SOLAPAS */
+
+.flap{
+  position:absolute;
+}
+
+.side-flap{
+  top:0;
+  height:100%;
+  width:52%;
+  z-index:2;
+}
+
+.left-flap{
+  left:0;
+  background:$bg-left;
+  clip-path:polygon(0 0,100% 50%,0 100%);
+}
+
+.right-flap{
+  right:0;
+  background:$bg-right;
+  clip-path:polygon(100% 0,0 50%,100% 100%);
+}
+
+
+.top-flap{
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:65%;
+
+  background:$bg-top;
+
+  clip-path:polygon(
+      0 0,
+      100% 0,
+      50% 75%
+  );
+
+  z-index:4;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  padding-top:38px;
+
+  transform-origin:top center;
+}
+
+.names-wrapper{
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  font-family:'Great Vibes',cursive;
+
+  color:$text-gold;
+
+  line-height:1;
+
+  font-size:40px;
+}
+
+.ampersand{
+
+  font-size:28px;
+
+  color:$text-amp;
+}
+
+
+/* PARTE INFERIOR */
+
+.bottom-flap{
+
+  bottom:0;
+  left:0;
+
+  width:100%;
+  height:50%;
+
+  background:$bg-bottom;
+
+  clip-path:polygon(
+      0 100%,
+      100% 100%,
+      50% 0
+  );
+
+  z-index:3;
+
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+
+  padding-bottom:55px;
+}
+
+.instructions{
+
+  text-align:center;
+
+  color:$text-gray;
+}
+
+.instructions p{
+  margin:0;
+}
+
+.instructions strong{
+
+  display:block;
+
+  color:$text-dark;
+
+  font-size:16px;
+
+  animation:pulse 2s infinite;
+}
+
+
+/* SELLO */
+
+.seal{
+
+  position:absolute;
+
+  top:58%;
+  left:50%;
+
+  width:74px;
+  height:74px;
+
+  transform:
+  translate(-50%,-50%);
+
+  border-radius:50%;
+
+  z-index:10;
+
+  cursor:pointer;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background:
+  radial-gradient(
+  circle at 38% 36%,
+  $gold-light,
+  $gold 52%,
+  $gold-dark
+  );
+
+  box-shadow:
+  inset 0 2px 4px rgba(255,255,255,.45),
+  inset 0 -2px 5px rgba(0,0,0,.25),
+  0 0 0 3px $gold-ring,
+  0 6px 20px rgba(0,0,0,.22);
+}
+
+
+/* APERTURA */
+
+.is-open{
+
+ .letter-content{
+
+   transform:
+   translateY(-65px)
+   scale(1);
+
+   opacity:1;
+ }
+
+ .top-flap{
+
+   transform:
+   rotateX(180deg);
+
+   opacity:0;
+ }
+
+ .bottom-flap{
+   transform:translateY(120%);
+ }
+
+ .left-flap{
+   transform:
+   translateX(-120%)
+   rotateY(-12deg);
+ }
+
+ .right-flap{
+   transform:
+   translateX(120%)
+   rotateY(12deg);
+ }
+
+ .seal{
+
+   opacity:0;
+
+   pointer-events:none;
+
+   transform:
+   translate(-50%,-50%)
+   scale(.2)
+   rotate(25deg);
+ }
+
+ .envelope-stage{
+
+   animation:
+   envelopeZoomOut 1.2s ease 3s forwards;
+ }
+}
+
+
+/* MOVIL */
+
+@media(max-width:600px){
+
+ .envelope-stage{
+   width:95vw;
+   height:84dvh;
+ }
+
+ .seal{
+   width:82px;
+   height:82px;
+ }
+
+ .top-flap .names-wrapper{
+   font-size:50px;
+ }
+
+ .couple-photo{
+   width:190px;
+   height:270px;
+ }
+
+ .letter-content h2{
+   font-size:32px;
+ }
+}

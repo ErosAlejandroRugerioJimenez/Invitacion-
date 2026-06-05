@@ -1,0 +1,326 @@
+<div class="event-details modelo10">
+
+  <section class="cover-section">
+
+    <img class="flower flower-bottom" src="/decor/fondoprincipal.avif" alt="">
+
+    <div class="cover-content">
+
+      <p class="cover-small">NOS CASAMOS</p>
+
+      <h1 class="cover-name">Oliver</h1>
+      <p class="cover-and">y</p>
+      <h1 class="cover-name">Diana</h1>
+
+      <p class="cover-date">01 DE AGOSTO 2026</p>
+
+      <div class="scroll-indicator">⌄</div>
+      <p class="scroll-text">DESLIZA</p>
+
+    </div>
+
+  </section>
+
+
+  <section class="couple-photo-section" appScrollReveal>
+
+    <div class="quote-card">
+      <p class="photo-quote">
+        De todas las historias de amor que existen,<br>
+        nuestra favorita es la que estamos escribiendo juntos.
+      </p>
+    </div>
+
+    <div class="quote-heart">♡</div>
+
+    <img src="/decor/perritos.jpeg" alt="Oliver y Diana" loading="lazy">
+
+  </section>
+
+
+  <section class="our-story-section" appScrollReveal>
+
+  <p class="script-title">Nuestra Historia</p>
+
+  <h2 class="story-subtitle">CÓMO COMENZÓ TODO</h2>
+
+  <div class="story-quote-box">
+
+    <span class="quote-icon">“</span>
+
+    <p class="story-text">
+      Todo comenzó con una sonrisa, y hoy estamos a punto de decir 'Sí, acepto'.
+    </p>
+
+    <span class="quote-icon right">”</span>
+
+  </div>
+
+  <div class="story-slider-container">
+
+    <div class="slider-wrapper">
+
+      <div
+        class="slide"
+        *ngFor="let img of storyImages; let i = index"
+        [class.active]="i === currentSlide">
+
+        <img [src]="img" alt="Nuestra Historia">
+
+      </div>
+
+    </div>
+
+    <div class="slider-dots">
+
+      <span
+        class="dot"
+        *ngFor="let img of storyImages; let i = index"
+        [class.active]="i === currentSlide"
+        (click)="setSlide(i)">
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+  <section class="parents-section" appScrollReveal>
+
+    <div class="border-card">
+
+      <p class="script-text">
+        Con la bendición de Dios<br>
+        y en compañía de nuestros padres
+      </p>
+
+      <p class="parents-title">Padres de la novia</p>
+
+      <p class="parents-name">Sr. José Antonio Becerra Vargas</p>
+      <p class="parents-name">Sra. María de los Ángeles Jiménez Estrada</p>
+
+      <p class="parents-title">Padres del novio</p>
+
+      <p class="parents-name">Sr. Jaime Rugerio Mendieta</p>
+      <p class="parents-name">Sra. Cristina Jimenez George</p>
+
+      <p class="script-text bottom">
+        Nos complace invitarte a<br>
+        ser parte de este gran día.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="countdown-section floral-section" appScrollReveal>
+
+    <div class="count-box">
+
+      <p class="count-title">FALTAN:</p>
+
+      <div class="countdown-grid">
+
+        <div class="countdown-item">
+          <span class="count-number">{{ days }}</span>
+          <span class="count-label">DÍAS</span>
+        </div>
+
+        <span class="count-separator">·</span>
+
+        <div class="countdown-item">
+          <span class="count-number">{{ hours }}</span>
+          <span class="count-label">HORAS</span>
+        </div>
+
+        <span class="count-separator">·</span>
+
+        <div class="countdown-item">
+          <span class="count-number">{{ minutes }}</span>
+          <span class="count-label">MINUTOS</span>
+        </div>
+
+        <span class="count-separator">·</span>
+
+        <div class="countdown-item">
+          <span class="count-number">{{ seconds }}</span>
+          <span class="count-label">SEGUNDOS</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="count-date">
+      01 AGOSTO DE 2026
+    </div>
+
+  </section>
+
+
+  <section class="where-section" appScrollReveal>
+
+    <div class="title-card">
+      <p class="script-title">Dónde y Cuándo</p>
+    </div>
+
+  </section>
+
+
+  <section class="place-card" appScrollReveal>
+
+    <img class="place-img" src="/iglesia.jpg" alt="Ceremonia religiosa" loading="lazy">
+
+    <div class="place-info">
+
+      <p class="place-script">Ceremonia Civil</p>
+
+      <h3 class="place-name">Plaza de Toros Apan</h3>
+
+      <p class="place-time">15:00 p. m.</p>
+
+      <p class="place-address">Lugar de la ceremonia<br>Apan, México</p>
+
+      <a class="place-btn" href="https://maps.app.goo.gl/GmLqny8qLKrM8qmH9" target="_blank">
+        VER MAPA
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <section class="place-card" appScrollReveal>
+
+    <img class="place-img" src="/salon.webp" alt="Recepción" loading="lazy">
+
+    <div class="place-info">
+
+      <p class="place-script">Recepción</p>
+
+      <h3 class="place-name">Salón Madrid</h3>
+
+      <p class="place-time">14:30 p. m.</p>
+
+      <p class="place-address">Recepción y fiesta<br>mismo lugar del evento</p>
+
+      <a class="place-btn" href="https://maps.app.goo.gl/1bYdC1BgtTFaA9uJ6" target="_blank">
+        VER MAPA
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <section class="itinerary-section" appScrollReveal>
+
+    <p class="script-title">Itinerario</p>
+
+    <div class="dynamic-timeline">
+
+      <div class="timeline-line"></div>
+
+      <div class="timeline-progress" [style.height.%]="timelineProgress"></div>
+
+      <div
+        class="timeline-step"
+        *ngFor="let item of itinerary; let i = index"
+        [class.active]="i <= activeStep">
+
+        <div class="timeline-dot">♡</div>
+
+        <div class="timeline-content">
+
+          <p class="timeline-time">{{ item.time }}</p>
+
+          <p class="timeline-event">{{ item.title }}</p>
+
+          <img class="timeline-icon-img" [src]="item.icon" [alt]="item.title" loading="lazy">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="dresscode-section" appScrollReveal>
+
+    <div class="dress-content">
+
+      <p class="script-title">Código de Vestimenta</p>
+
+      <h3 class="section-uppercase">FORMAL</h3>
+
+      <p class="simple-text">
+        El blanco está reservado para la novia.<br>
+        Nos encantará verte en otros colores.
+      </p>
+
+      <div class="dress-image">
+        <img src="/decor/dresscode.png" alt="Dress Code" loading="lazy">
+      </div>
+
+      <br><br>
+
+      <p class="script-title">Asistencia</p>
+
+      <p class="simple-text">
+        Queremos compartir este día tan especial contigo.
+      </p>
+
+      <a
+        class="whatsapp-btn"
+        href="https://wa.me/527299661474?text=Hola,%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Oliver%20y%20Diana"
+        target="_blank">
+        CONFIRMAR POR WHATSAPP
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <section class="final-section" appScrollReveal>
+
+    <div class="final-overlay">
+
+      <p class="final-title">¡Los Esperamos!</p>
+
+      <p class="final-text">
+        Gracias por acompañarnos en uno de los días más importantes de nuestras vidas.
+      </p>
+
+      <p class="final-names">Oliver & Diana</p>
+
+      <div class="final-heart">❤</div>
+
+    </div>
+
+    <div class="final-photo">
+      <img src="/decor/noviosfinal.jpeg" alt="Oliver y Diana" loading="lazy">
+    </div>
+
+  </section>
+
+<section class="erssoft-premium-footer">
+  <div class="glass-pill">
+    <div class="brand-info">
+      <span class="powered-by">Experiencia digital por</span>
+      <!-- Tu marca con un brillo especial -->
+      <span class="brand-name">ErsSoft</span> 
+    </div>
+    
+    <a href="https://wa.me/522461756788?text=Hola%20Eros,%20vi%20tu%20increíble%20trabajo%20en%20una%20invitación%20y%20quiero%20cotizar%20la%20mía." target="_blank" class="glass-btn">
+      Cotiza la tuya ✨
+    </a>
+  </div>
+</section>
+
+</div>

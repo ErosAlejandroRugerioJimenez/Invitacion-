@@ -1,0 +1,14 @@
+.music-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 4px 18px rgba(0,0,0,.18);
+  font-size: 20px;
+  z-index: 9999;
+  cursor: pointer;
+}

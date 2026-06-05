@@ -1,0 +1,38 @@
+<div class="mobile-envelope-wrapper" [class.is-open]="isOpen">
+  <div class="envelope-stage">
+
+   <div class="letter-content">
+  <div class="couple-photo">
+    <img src="/uno.jpeg" alt="Oliver y Diana">
+  </div>
+
+  <h2>¡Nos Casamos!</h2>
+  <p class="date-text">01 · 08 · 26</p>
+  
+  <span class="heart-divider">♡</span>
+  <h3 class="couple-names">Oliver & Diana</h3>
+</div>
+
+    <div class="flap side-flap left-flap"></div>
+    <div class="flap side-flap right-flap"></div>
+
+    <div class="flap top-flap">
+      <div class="names-wrapper">
+        <span>Oliver</span>
+        <span class="ampersand">&</span>
+        <span>Diana</span>
+      </div>
+    </div>
+
+    <div class="flap bottom-flap">
+     <div class="envelope-instructions">
+  <span class="news-text">Tenemos una noticia...</span>
+  <span class="action-text">¡PULSA AQUÍ Y DESLIZA!</span>
+</div>
+    </div>
+
+    <div class="seal" (click)="openEnvelope()">
+<span class="seal-initials">O&D</span>    </div>
+
+  </div>
+</div>
