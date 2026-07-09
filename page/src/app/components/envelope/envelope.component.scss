@@ -180,39 +180,43 @@ $bg-right:#e8e6e3;
 
 /* FOTO */
 
-.couple-photo{
+.couple-photo {
+  width: 230px;
+  height: 320px;
+  margin: 0 auto 30px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+  border: 5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  isolation: isolate;
 
-  width:230px;
-  height:320px;
-
-  margin:0 auto 30px;
-
-  border-radius:22px;
-
-  overflow:hidden;
-
-  background:#fff;
-
-  border:5px solid rgba(255,255,255,.95);
-
-  box-shadow:
-      0 15px 40px rgba(0,0,0,.15);
-
-  animation:photoReveal 10s ease;
+  /* ========================================= */
+  /* FIX DEFINITIVO PARA SAFARI / iOS          */
+  /* ========================================= */
+  /* Esto obliga al sistema a recortar sí o sí */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
+  
+  animation: photoReveal 10s ease forwards;
 }
 
-.couple-photo img{
-
-  width:100%;
-  height:100%;
-
-  object-fit:contain;
-
-  object-position:center;
-
-  background:#fff;
-
-  display:block;
+.couple-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background: #fff;
+  display: block;
+  
+  /* ========================================= */
+  /* FIX DE APOYO                              */
+  /* ========================================= */
+  /* Le damos borde a la foto restando los 5px del marco */
+  border-radius: 17px; 
 }
 
 
