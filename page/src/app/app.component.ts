@@ -20,8 +20,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      document.body.classList.add('lock-scroll');
-      document.documentElement.classList.add('lock-scroll');
+      
+     // document.body.classList.add('lock-scroll');
+     // document.documentElement.classList.add('lock-scroll');
 
       this.audio = new Audio('/audio/cancion.mp3');
       this.audio.loop = true;
@@ -33,8 +34,8 @@ export class AppComponent implements OnInit {
     this.isOpen = true;
 
     if (isPlatformBrowser(this.platformId)) {
-      document.body.classList.remove('lock-scroll');
-      document.documentElement.classList.remove('lock-scroll');
+     // document.body.classList.remove('lock-scroll');
+      //document.documentElement.classList.remove('lock-scroll');
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
       this.audio?.play();

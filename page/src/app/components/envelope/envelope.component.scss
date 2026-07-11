@@ -56,20 +56,17 @@ $bg-right:#e8e6e3;
 
 /* WRAPPER */
 
-.mobile-envelope-wrapper{
-  width:100vw;
-  min-height:100dvh;
+.mobile-envelope-wrapper {
+  position: fixed;
+  inset: 0;
 
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  margin:0;
-  padding:0;
-
-  overflow:hidden;
-
-  background:$bg-outer;
+  overflow: hidden;
+  background: $bg-outer;
+  z-index: 99999;
 }
 
 
