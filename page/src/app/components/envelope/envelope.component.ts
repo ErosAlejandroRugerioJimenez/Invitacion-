@@ -15,19 +15,19 @@ export class EnvelopeComponent {
   isOpen = false;
 
 openEnvelope(): void {
-    this.isOpen = true;
-    
-    // Dejamos que la animación corra con la pantalla bloqueada...
+  this.isOpen = true;
 
-    setTimeout(() => {
-      this.opened.emit(); // Cambiamos a la vista de los detalles
-      
-      // AHORA SÍ quitamos el candado, justo cuando la invitación ya existe en pantalla
+  setTimeout(() => {
+    this.opened.emit();
+
+    // Espera un frame para que Angular termine de renderizar la invitación
+    requestAnimationFrame(() => {
       document.body.classList.remove('lock-scroll');
       document.documentElement.classList.remove('lock-scroll');
-      
-      // Este pequeño truco fuerza al celular a recalcular la altura de la página de inmediato
-      window.scrollTo(0, 0); 
-    }, 4200);
+
+      window.scrollTo(0, 0);
+    });
+
+  }, 4200);
 }
 }
