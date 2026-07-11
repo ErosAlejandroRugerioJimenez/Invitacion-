@@ -180,63 +180,75 @@ $bg-right:#e8e6e3;
 
 /* FOTO */
 
-.couple-photo {
-
-  width: 230px;
-
-  height: 320px;
-
-  margin: 0 auto 30px;
-
-  border-radius: 22px;
-
-  overflow: hidden;
-
-  background: #fff;
-
-  border: 5px solid rgba(255, 255, 255, 0.95);
-
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-
- 
-
-  /* FIX 1: Truco para que la foto no se salga de los bordes curvos al animarse en celulares */
-
-  -webkit-backface-visibility: hidden;
-
-  -webkit-transform: translate3d(0, 0, 0);
-
-  isolation: isolate;
+.couple-photo{
 
 
 
-  /* FIX 2: Agregamos 'forwards' para que no desaparezca o salte al terminar los 10s */
+  width:230px;
 
-  animation: photoReveal 10s ease forwards;
+  height:320px;
 
-}
 
-.couple-photo img {
 
-  width: 100%;
+  margin:0 auto 30px;
 
-  height: 100%;
 
- 
 
-  /* FIX 3: Cambiamos contain por cover para un encuadre perfecto */
+  border-radius:22px;
 
-  object-fit: cover;
 
- 
 
-  object-position: center;
+  overflow:hidden;
 
-  background: #fff;
 
-  display: block;
+
+  background:#fff;
+
+
+
+  border:5px solid rgba(255,255,255,.95);
+
+
+
+  box-shadow:
+
+      0 15px 40px rgba(0,0,0,.15);
+
+
+
+  animation:photoReveal 10s ease;
 
 }
+
+
+
+.couple-photo img{
+
+
+
+  width:100%;
+
+  height:100%;
+
+
+
+  object-fit:contain;
+
+
+
+  object-position:center;
+
+
+
+  background:#fff;
+
+
+
+  display:block;
+
+} 
+
+
 
 
 /* TEXTO */
