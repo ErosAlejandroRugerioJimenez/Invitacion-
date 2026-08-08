@@ -26,7 +26,9 @@ export class App implements AfterViewInit {
     });
   }
 
-  @HostListener('window:resize', ['$event'])
+ // Antes estaba así: @HostListener('window:resize', ['$event'])
+  
+  @HostListener('window:resize')
   onResize() {
     if (this.btnRef && this.attempts < this.maxAttempts) {
       this.centerButton();
