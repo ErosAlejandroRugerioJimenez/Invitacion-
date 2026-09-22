@@ -10,4 +10,6 @@
   (opened)="onEnvelopeOpened()">
 </app-envelope>
 
-<app-event-details *ngIf="isOpen"></app-event-details>
+<main *ngIf="isOpen" class="invitation-scroll">
+  <app-event-details></app-event-details>
+</main>

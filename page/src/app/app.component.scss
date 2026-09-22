@@ -1,3 +1,26 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.invitation-scroll {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
+  touch-action: pan-y;
+}
+
+app-event-details {
+  display: block;
+  min-height: calc(100dvh + 1px);
+}
+
 .music-btn {
   position: fixed;
   top: 18px;
