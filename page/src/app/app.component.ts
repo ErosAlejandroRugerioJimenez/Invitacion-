@@ -37,10 +37,6 @@ export class AppComponent implements OnInit {
       document.body.classList.remove('lock-scroll');
       document.documentElement.classList.remove('lock-scroll');
 
-      requestAnimationFrame(() => {
-        window.scrollTo(0, 0);
-      });
-
       this.audio?.play().then(() => {
         this.isMuted = false;
       }).catch(() => {
