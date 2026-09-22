@@ -31,8 +31,14 @@
 </div>
     </div>
 
-    <div class="seal" (click)="openEnvelope()">
-<span class="seal-initials">O&D</span>    </div>
+<button
+  class="seal"
+  type="button"
+  aria-label="Abrir invitación"
+  [disabled]="isOpen"
+  (click)="openEnvelope()">
+  <span class="seal-initials">O&D</span>
+</button>
 
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,26 +8,25 @@ import { CommonModule } from '@angular/common';
   templateUrl: './envelope.component.html',
   styleUrl: './envelope.component.scss'
 })
-export class EnvelopeComponent {
+export class EnvelopeComponent implements OnDestroy {
 
   @Output() opened = new EventEmitter<void>();
 
   isOpen = false;
+  private openTimer?: ReturnType<typeof setTimeout>;
 
-openEnvelope(): void {
-  this.isOpen = true;
+  openEnvelope(): void {
+    if (this.isOpen) return;
 
-  setTimeout(() => {
-    this.opened.emit();
+    this.isOpen = true;
+    this.openTimer = setTimeout(() => {
+      this.opened.emit();
+    }, 4200);
+  }
 
-    // Espera un frame para que Angular termine de renderizar la invitación
-    requestAnimationFrame(() => {
-      document.body.classList.remove('lock-scroll');
-      document.documentElement.classList.remove('lock-scroll');
-
-      window.scrollTo(0, 0);
-    });
-
-  }, 4200);
-}
+  ngOnDestroy(): void {
+    if (this.openTimer) {
+      clearTimeout(this.openTimer);
+    }
+  }
 }

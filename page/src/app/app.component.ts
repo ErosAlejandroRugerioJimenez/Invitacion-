@@ -34,12 +34,18 @@ export class AppComponent implements OnInit {
     this.isOpen = true;
 
     if (isPlatformBrowser(this.platformId)) {
-     // document.body.classList.remove('lock-scroll');
-      //document.documentElement.classList.remove('lock-scroll');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.body.classList.remove('lock-scroll');
+      document.documentElement.classList.remove('lock-scroll');
 
-      this.audio?.play();
-      this.isMuted = false;
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+      });
+
+      this.audio?.play().then(() => {
+        this.isMuted = false;
+      }).catch(() => {
+        this.isMuted = true;
+      });
     }
   }
 
